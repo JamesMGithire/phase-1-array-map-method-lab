@@ -11,20 +11,20 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return(senSplit())
-}
+// Function takes list and slipts each sentence(wordL) into an array(of "words")
 
-// Fun takes list and slipts each sentence into an array
-// And creates a nested array of {sentnces{words}}
-function senSplit() {
+function titleCased(){
   let newT = tutorials.map((wordL)=>{
     const words = wordL.split(" ");
+    // newWords are capitalised
     const newWords =words.map((word)=>{
       const firstL = word.charAt(0);
       return firstL.toUpperCase()+word.substring(1);
     })
     return newWords.join(" ");
+    // retrun joined capitalised words as new scentences
   })
-  return(newT)
+  return newT;
 }
+
+// General understanding: .map(), .find and .filter works as for loop works in handling arrays and objects.
