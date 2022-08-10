@@ -12,5 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return(senSplit())
+}
+
+// Fun takes list and slipts each sentence into an array
+// And creates a nested array of {sentnces{words}}
+function senSplit() {
+  let newT = tutorials.map((wordL)=>{
+    const words = wordL.split(" ");
+    const newWords =words.map((word)=>{
+      const firstL = word.charAt(0);
+      return firstL.toUpperCase()+word.substring(1);
+    })
+    return newWords.join(" ");
+  })
+  return(newT)
 }
